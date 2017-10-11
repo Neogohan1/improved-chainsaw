@@ -11,7 +11,7 @@ const styles = require('./includes/style');
 export default class App extends React.Component {
 
 
-
+//New Branch for testing FirebaseUI Auth
 
   render() {
     return (
