@@ -8,5 +8,6 @@ const firebaseConfig = {
   storageBucket: "reactnativefirebasetutor-7f329.appspot.com"
 };
 
+
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 export default firebaseApp;
