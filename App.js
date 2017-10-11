@@ -2,7 +2,10 @@ import React from 'react';
 import { StyleSheet, Text, View, ListView, TouchableHighlight} from 'react-native';
 import Toolbar from './components/Toolbar/Toolbar';
 
+
+import firebaseApp from './includes/firebase/firebase';
 const styles = require('./includes/style');
+//const firebaseApp = Firebase.initializeApp();
 
 export default class App extends React.Component {
   render() {
@@ -10,7 +13,7 @@ export default class App extends React.Component {
 
 
       <View style={styles.container}>
-        <Toolbar title="Main Toolbar" />
+        <Toolbar title="Item List" />
         <ListView
           dataSource={this.state.itemDataSource}
           renderRow={this.renderRow}
@@ -19,6 +22,8 @@ export default class App extends React.Component {
 
     );
   }
+
+
 
   pressRow(item){
     console.log(item);
@@ -46,22 +51,37 @@ export default class App extends React.Component {
     }
     this.renderRow = this.renderRow.bind(this);
     this.pressRow = this.pressRow.bind(this);
+    this.itemsRef=this.getRef().child('items');
+  }
 
+  getRef(){
+    return firebaseApp.database().ref();
   }
 
 componentWillMount(){
-  this.getItems();
+  this.getItems(this.itemsRef);
 }
 
 componentDidMount(){
-  this.getItems();
+  this.getItems(this.itemsRef);
 }
 
-  getItems(){
-    let items= [{title:"Item One"},{title:'Item Two'}];
-    this.setState({
-      itemDataSource: this.state.itemDataSource.cloneWithRows(items)
+  getItems(itemsRef){
+    //let items= [{title:"Item One"},{title:'Item Two'}];
+    itemsRef.on('value',(snap)=>{
+      let items=[];
+      snap.forEach((child)=>{
+        items.push({
+          title:child.val().title,
+          _key:child.key
+        });
+      });
+      this.setState({
+        itemDataSource: this.state.itemDataSource.cloneWithRows(items)
+      });
     });
+
+
   }
 
     async signup(email, pass) {
