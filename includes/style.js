@@ -56,7 +56,23 @@ navbarTitle:{
 toolbar:{
   backgroundColor:'#fff',
   height:22,
-}
+},
+center:{
+  textAlign:'center',
+},
+actionText:{
+  color:'#fff',
+  fontSize:16,
+  textAlign:'center',
+},
+action:{
+  backgroundColor:constants.actionColor,
+  borderColor:'transparent',
+  borderWidth:1,
+  paddingLeft:16,
+  paddingTop: 14,
+  paddingBottom:16,
+},
 
 });
 
