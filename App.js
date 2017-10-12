@@ -19,7 +19,7 @@ const MainScreenNavigator = TabNavigator({
   Tab2: { screen: ProfileScreen},
 });
 
-
+//test
 const App = StackNavigator({
   Home: { screen: MainScreenNavigator,
           navigationOptions: {
