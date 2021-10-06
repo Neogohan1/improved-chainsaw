@@ -28,7 +28,7 @@ Below you'll find information about performing common tasks. The most recent ver
   * [QR Code does not scan](#qr-code-does-not-scan)
 
 ## Updating to New Releases
-
+checking this note
 You should only need to update the global installation of `create-react-native-app` very rarely, ideally never.
 
 Updating the `react-native-scripts` dependency of your app should be as simple as bumping the version number in `package.json` and reinstalling your project's dependencies.
