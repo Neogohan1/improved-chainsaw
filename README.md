@@ -201,11 +201,7 @@ If you're not able to load the `http` URL in your phone's web browser, try using
 
 ### iOS Simulator won't open
 
-If you're on a Mac, there are a few errors that users sometimes see when attempting to `npm run ios`:
-
-* "non-zero exit code: 107"
-* "You may need to install Xcode" but it is already installed
-* and others
+No longer supported
 
 There are a few steps you may want to take to troubleshoot these kinds of errors:
 
