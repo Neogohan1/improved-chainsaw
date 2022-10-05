@@ -29,8 +29,8 @@ let myStyles = StyleSheet.create({
 
   },
   liText:{
-    color:'#333',
-    fontSize:16,
+    color:'#121',
+    fontSize:15,
   },
 
 statusBar:{
