@@ -17,6 +17,7 @@ const styles = require('./includes/style');
 const MainScreenNavigator = TabNavigator({
   Tab1: { screen: HomeScreen },
   Tab2: { screen: ProfileScreen},
+  Tab3: {screen: TestScreen},
 });
 
 //test2
